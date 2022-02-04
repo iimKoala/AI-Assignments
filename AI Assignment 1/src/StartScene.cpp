@@ -50,12 +50,22 @@ void StartScene::start()
 	m_pStartLabel->setParent(this);
 	addChild(m_pStartLabel);
 
+	m_pCreator1 = new Label("Erica Bonomo 101305105", "Inconsolata", 80, blue, glm::vec2(400.0f, 40.0f));
+	m_pCreator1->setParent(this);
+	addChild(m_pCreator1);
+
+	m_pCreator2 = new Label("Melica Alikhani-Marqueti 101360798", "Inconsolata", 80, blue, glm::vec2(400.0f, 40.0f));
+	m_pCreator2->setParent(this);
+	addChild(m_pCreator2);
+
+	m_pCreator3 = new Label("Rj Haye 101316568", "Inconsolata", 80, blue, glm::vec2(400.0f, 40.0f));
+	m_pCreator3->setParent(this);
+	addChild(m_pCreator3);
+
 	m_pInstructionsLabel = new Label("Press 1 to Play", "Consolas", 40, blue, glm::vec2(400.0f, 120.0f));
 	m_pInstructionsLabel->setParent(this);
 	addChild(m_pInstructionsLabel);
 
-
-	
 
 	// Start Button
 	m_pStartButton = new Button();
