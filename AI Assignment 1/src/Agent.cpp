@@ -1,6 +1,7 @@
 #include "Agent.h"
 
 #include "Util.h"
+#include <iostream>
 
 Agent::Agent()
 {
