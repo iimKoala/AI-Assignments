@@ -98,6 +98,17 @@ void SpaceShip::Seek()
 	getRigidBody()->acceleration = getCurrentDirection() * getAccelerationRate();
 }
 
+void SpaceShip::Flee()
+{
+	setDesiredVelocity(getTargetPosition());
+
+	const glm::vec2 steering_direction = getDesiredVelocity() + getCurrentDirection();
+
+	LookWhereYoureGoing(steering_direction);
+
+	getRigidBody()->acceleration = getCurrentDirection() * getAccelerationRate();
+}
+
 void SpaceShip::LookWhereYoureGoing(const glm::vec2 target_direction)
 {
 	const float target_rotation = Util::signedAngle(getCurrentDirection(), target_direction);

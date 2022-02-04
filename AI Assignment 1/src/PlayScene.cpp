@@ -72,7 +72,7 @@ void PlayScene::start()
 	m_bDebugView = false;
 
 	const SDL_Color blue = { 0, 0, 255, 255 };
-	m_pInstructionsLabel = new Label("Press 1 for Seeking, 2 for Fleeing, 3 for Arrival, 4 for Obstacle Avoidance", "Consolas", 25, blue, glm::vec2(400.0f, 120.0f));
+	m_pInstructionsLabel = new Label("Press 1 for Seeking, 2 for Fleeing, 3 for Arrival, 4 for Obstacle Avoidance", "Consolas", 18, blue, glm::vec2(0.0f, 0.0f),0,false);
 	addChild(m_pInstructionsLabel);
 
 	m_pTarget = new Target(); // instantiating a new target object - allocating memory on the Heap

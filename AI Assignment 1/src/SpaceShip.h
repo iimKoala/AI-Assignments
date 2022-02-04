@@ -28,6 +28,7 @@ public:
 
 	// public functions
 	void Seek();
+	void Flee();
 	void LookWhereYoureGoing(glm::vec2 target_direction);
 
 private:
