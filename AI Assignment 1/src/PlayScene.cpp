@@ -7,6 +7,9 @@
 #include "imgui_sdl.h"
 #include "Renderer.h"
 #include "Util.h"
+#include "SpaceShip.h"
+#include "Target.h"
+
 
 PlayScene::PlayScene()
 {
@@ -85,6 +88,10 @@ void PlayScene::start()
 	m_pSpaceShip->setEnabled(false);
 	addChild(m_pSpaceShip);
 
+	SoundManager::Instance().load("../Assets/audio/campfire.mp3", "Level-Music", SOUND_MUSIC);
+	SoundManager::Instance().playMusic("Level-Music", -1, 0);
+	SoundManager::Instance().setMusicVolume(3);
+
 	ImGuiWindowFrame::Instance().setGUIFunction(std::bind(&PlayScene::GUI_Function, this));
 }
 
@@ -125,6 +132,11 @@ void PlayScene::GUI_Function()
 	if (ImGui::Checkbox("Toggle Seek", &toggleSeek))
 	{
 		m_pSpaceShip->setEnabled(toggleSeek);
+	}
+	static bool toggleFlee = m_pSpaceShip->isEnabled();
+	if (ImGui::Checkbox("Toggle Flee", &toggleFlee))
+	{
+		m_pSpaceShip->setEnabled(toggleFlee);
 	}
 
 	static float speed = m_pSpaceShip->getMaxSpeed();

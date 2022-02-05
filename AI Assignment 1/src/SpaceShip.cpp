@@ -6,7 +6,7 @@
 
 SpaceShip::SpaceShip()
 {
-	TextureManager::Instance().load("../Assets/textures/ncl.png", "space_ship");
+	TextureManager::Instance().load("../Assets/textures/AISprite.png", "space_ship");
 
 	const auto size = TextureManager::Instance().getTextureSize("space_ship");
 	setWidth(size.x);
@@ -132,7 +132,7 @@ void SpaceShip::LookWhereYoureGoing(const glm::vec2 target_direction)
 void SpaceShip::m_move()
 {
 	Seek();
-
+	Flee();
 	//									Final position		Position term	  Velocity term		   Acceleration term
 	// kinematic equation for motion --> Pf				 =		 Pi		 +		Vi*(time)	+	(0.05)*Ai*(time * time)
 
